@@ -19,7 +19,5 @@ class MainActivity : AppCompatActivity() {
         userList.layoutManager=LinearLayoutManager(this)
         mAdapter=UsersListAdapter(viewModel.getUsers())
         userList.adapter=mAdapter
-
-        Log.d("Mainactivity","adapterset")
     }
 }

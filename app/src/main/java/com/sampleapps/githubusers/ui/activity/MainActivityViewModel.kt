@@ -8,7 +8,6 @@ class MainActivityViewModel:ViewModel() {
        val list= ArrayList<String>()
         for(i in 1..100){
             list.add("User $i")
-            Log.d("Tag",list.toString())
         }
         return list
     }

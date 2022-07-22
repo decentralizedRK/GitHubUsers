@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">GitHubUsers</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">decentralizedRK</string>
+    <string name="user_description">Continually learning, continually striving for excellence. Adept in Python and JavaScript.
+        Currently working with Rakuten in the e-finance sector, with projects focused on Openshift, Docker and Java.
+        Proven communication and leadership skills.</string>
 </resources>
