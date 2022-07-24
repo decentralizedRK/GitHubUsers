@@ -20,7 +20,7 @@ class UsersListAdapter(private val listener: UserItemClicked, private val usersL
         val view =LayoutInflater.from(parent.context).inflate(R.layout.fragment_user,parent,false)
         val holder=UserViewHolder(view)
         view.setOnClickListener {
-            listener.onUserClicked(usersList[holder.adapterPosition],holder.adapterPosition)
+            listener.onUserClicked(usersList[holder.adapterPosition])
         }
         return holder
     }
@@ -50,5 +50,5 @@ class UserViewHolder(userView: View):RecyclerView.ViewHolder(userView){
 * onclickLister callback interface
 */
 interface UserItemClicked{
-    fun onUserClicked(user:GitHubUser, position: Int)
+    fun onUserClicked(user:GitHubUser)
 }

@@ -16,8 +16,8 @@ import kotlin.collections.ArrayList
 
 class MainActivityViewModel:ViewModel() {
     private val TAG:String ="MainActivityViewModel"
-    private var userNames: ArrayList<GitHubUser> = ArrayList()
-    suspend fun getNames():ArrayList<GitHubUser>{
+    private var usersList: ArrayList<GitHubUser> = ArrayList()
+    suspend fun getUsersList():ArrayList<GitHubUser>{
 
         viewModelScope.async {
             val response = try{
@@ -25,17 +25,22 @@ class MainActivityViewModel:ViewModel() {
             }catch (e :IOException)
             {
                 Log.e(TAG,"IOException,internet connection issue")
+                throw Exception("IOException,internet connection issue")
                 return@async
             }catch (e :HttpException){
                 Log.e(TAG,"HttpException , unexpected Response")
+                throw Exception("HttpException , unexpected Response")
                 return@async
             }
 
             if (response.isSuccessful && response.body()!=null){
-                userNames= response.body()!!
+                usersList= response.body()!!
+            }else
+            {
+                throw Exception("Response not successful")
             }
         }.await()
-        return userNames
+        return usersList
     }
 
 }
