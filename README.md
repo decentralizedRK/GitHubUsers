@@ -12,6 +12,7 @@ Demonstrates how to use Recyclerview, Kotlin Coroutines , Retrofit library for A
 #### Improvements can be done
  * Add launch screen
  * Add own profile screen
+ * Add search function for specific user
  * Load more users data (Currently only 30)
  * Improve custom chrome tab layout
  * Use dependecy Injection
